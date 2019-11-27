@@ -22,6 +22,18 @@ module.exports = function(RED) {
 			var expectedState = null;
 
 			switch(msg.payload.action) {
+				//RTS Wall Outlet ON
+				case "on": 
+					commandName = "on";
+					statusProgressText = "Activating...";
+					statusDoneText = "On";
+					break;
+				//RTS Wall Outlet Off
+				case "off":
+					commandName = "off";
+					statusProgressText = "Deactivating...";
+					statusDoneText = "Off";
+					break;
 				case "open":
 					commandName = "open";
 					statusProgressText = "Opening...";
